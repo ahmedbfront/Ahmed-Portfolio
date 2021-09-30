@@ -1,0 +1,115 @@
+.showmsg {
+  background-color: var(--bg-color);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.3rem 0.3rem 0.4rem #ffffff0d, -0.3rem -0.3rem 0.4rem #ffffff24;
+  width: 600px;
+  &__body {
+    padding: 20px 16px;
+    width: 90%;
+    margin: auto;
+  }
+  &__top {
+    border-bottom: 1px solid #575757;
+    padding-bottom: 20px;
+  }
+  &__icon {
+    color: red;
+    font-size: 30px;
+  }
+  &__item {
+    padding-top: 20px;
+  }
+  &__msg {
+    background: #fff;
+    color: rebeccapurple;
+    padding: 10px 20px;
+  }
+ }
+
+.btnaction {
+  padding: 20px 0 10px;
+  &__close {
+    background-color: transparent;
+    color: #0d6efd;
+    font-size: 18px;
+    border: 0;
+    margin-right: 20px
+  }
+}
+
+.readmsg {
+  position: relative;
+  display: inline-block;
+  height: 50px;
+  top: 10px;
+  &__input {
+    display: none; 
+  }
+  &__label {
+    text-transform: uppercase;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    transition: all 0.2s;
+    border-radius: 2rem; 
+    &::before, &::after {
+      position: absolute;
+      left: 2.3rem;
+      transition: all 0.2s .1s ease-out; 
+    }
+    &::before {
+      content: attr(data-text-read); 
+    }
+    &::after {
+      content: attr(data-text-unread); 
+    }
+  }
+  &__icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 5 Free";
+    pointer-events: none; 
+  }
+}
+
+.readmsg input[type=checkbox] + label {
+  width: 120px;
+  background: var(--main--color); 
+}
+  .readmsg input[type=checkbox] + label:before {
+    opacity: 0;
+    transform: translate(0, 20px); 
+  }
+  .readmsg input[type=checkbox] + label:after {
+    opacity: 1;
+    transform: translate(0, 0); 
+  }
+
+.readmsg input[type=checkbox]:checked ~ label {
+  width: 120px;
+  background: #61B136; 
+}
+.readmsg input[type=checkbox]:checked ~ label:before {
+  opacity: 1;
+  transform: translate(0, 0); 
+}
+.readmsg input[type=checkbox]:checked ~ label:after {
+  opacity: 0;
+  transform: translate(0, -20px); 
+}
+
+.readmsg input[type=checkbox] ~ 
+.readmsg__icon::after {
+  content: "\f0e0";
+}
+
+.readmsg input[type=checkbox]:checked ~ 
+.readmsg__icon::after {
+  content: "\f2b6";
+
+}

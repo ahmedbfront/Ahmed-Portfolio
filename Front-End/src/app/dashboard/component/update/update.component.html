@@ -1,0 +1,58 @@
+<section class="section">
+  <div class="container">
+    <div class="section__title">
+      <h2>
+        Update
+        <span class="section__span">Portfolio</span>
+      </h2>
+    </div>
+    <div class="">
+      <div class="">
+        <button type="button" (click)='getHome()'>
+          Edit Home
+        </button>
+      </div>
+
+      <div class="" *ngIf='showHome'>
+        <form [formGroup]='fGroup' (ngSubmit)='editHome()'>
+          <div class="form-group">
+            <input class="form-control" type="text" name="title" formControlName='title' value="{{ home?.title }}">
+          </div>
+          <div class="form-group">
+            <input class="form-control" type="text" name="paragraph" formControlName='paragraph'
+            value='{{ home?.paragraph }}'>
+          </div>
+
+          <div class="btns">
+            <button class="btns__item" type="submit">
+              <i class="btns__icon fas fa-upload"></i>
+              Update Home
+            </button>
+          </div>
+        </form>
+      </div>
+      
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="">
+      <div class="">
+        <button type="button">
+          Edit About
+        </button>
+      </div>
+
+
+
+    </div>
+
+  </div>
+</section>

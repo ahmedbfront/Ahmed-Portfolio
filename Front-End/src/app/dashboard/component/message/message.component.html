@@ -1,0 +1,80 @@
+<section class="section">
+  <div class="container">
+    <table class="table table-dark table-hover" *ngIf='allMsg?.length > 0'>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Subject</th>
+          <th scope="col">Message</th>
+          <th scope="col">Email</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let msg of allMsg' (click)='showMessage(msg._id)'>
+          <td>
+            {{ msg.name }}
+          </td>
+          <td>
+            {{ msg.subject }}
+          </td>
+          <td class="text-break" style="max-width: 400px">
+            {{ msg.message }}
+          </td>
+          <td>
+            {{ msg.email }}
+          </td>
+          <td>
+            {{ msg.date | date: 'medium' }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="showmsg" *ngIf='showMsg'>
+      <div class="showmsg__body">
+        <div class="showmsg__top text-right">
+          <button type="button" class="btn p-0" (click)='hiddenMsg()'>
+            <i class="showmsg__icon far fa-window-close"></i>
+          </button>
+        </div>
+        <div class="showmsg__item">
+          <span>name</span>
+          <h6 class="showmsg__msg">
+            {{ oneMsg?.name }}
+          </h6>
+          <span>email</span>
+          <h6 class="showmsg__msg">
+            {{ oneMsg?.email }}
+          </h6>
+          <span>subject</span>
+          <h6 class="showmsg__msg">
+            {{ oneMsg?.subject }}
+          </h6>
+          <span>message</span>
+          <h6 class="showmsg__msg">
+            {{ oneMsg?.message }}
+          </h6>
+
+          <div class="readmsg">
+            <input class="readmsg__input" id="readmsg" type="checkbox"
+            (change)="toggleVisibility($event)" [checked]='seen'>
+            <label class="readmsg__label" for="readmsg" data-text-read="read" data-text-unread="unread">
+            </label>
+            <div class="readmsg__icon">
+            </div>
+          </div>
+          
+        </div>
+        <div class="btnaction">
+          <button class="btnaction__close" type="button" (click)='hiddenMsg()'>
+            Close
+          </button>
+          <div class="btns">
+            <button class="btns__item" type="button" [disabled]='!seen' (click)='editMessage(oneMsg?._id)'>Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,108 @@
+.sidebar {
+  background-color: #2c2d30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  padding: 0 8px;
+  z-index: 9999;
+  box-shadow: 0.3rem 0.3rem 0.4rem #202125,
+   -0.3rem -0.3rem 0.4rem #3e3e3e;
+  transition: all .4s;
+  &--opened {
+    left: 0 !important;
+  }
+}
+
+.logo {
+  position: relative;
+  top: 40px;
+  display: block;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.toggle {
+  background-color: #2c2d30;
+  position: absolute;
+  top: 24px;
+  left: 120px;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0.3rem 0.3rem 0.4rem #202125,
+   -0.3rem -0.3rem 0.4rem #3e3e3e;
+  z-index: 9999;
+  &__icon {
+    background-color: var(--main--color);
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 2.5px;
+    margin: auto;
+    &:after,
+    &:before {
+      content: "";
+      background-color: var(--main--color);
+      position: absolute;
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      transition: all 0.2s;
+    }
+    &:after {
+      bottom: -8px;
+    }
+    &:before {
+      top: -8px;
+    }
+    &--opened {
+      background-color: transparent;
+      &:after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.sidenav {
+  &__list {
+    display: grid;
+    align-content: center;
+    grid-gap: 20px;
+    height: 100vh;
+  }
+  &__link {
+    color: #fffefeeb;
+    font-size: 15px;
+    padding: 14px 6px;
+    border-radius: 14px;
+    box-shadow: 0.3rem 0.3rem 0.4rem #202125, -0.3rem -0.3rem 0.4rem #3e3e3e;
+    transition: all .3s;
+    &:hover {
+      color: var(--main--color);
+      box-shadow: inset 0.3rem 0.3rem 0.4rem #202125,
+       inset -0.3rem -0.3rem 0.4rem #3e3e3e;
+    }
+    &--active {
+      color: var(--main--color);
+      box-shadow: inset 0.3rem 0.3rem 0.4rem #202125,
+       inset -0.3rem -0.3rem 0.4rem #3e3e3e;
+    }
+  }
+}
+
+
+@media(max-width: 991.98px) {
+  .sidebar {
+    left: -100px;
+  }
+}

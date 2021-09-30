@@ -1,0 +1,35 @@
+.btns {
+  background-color: var(--bg-color);
+  display: inline-block;
+  margin-top: 12px;
+  padding: 1px;
+  border-radius: 20px;
+  box-shadow: 0.3rem 0.3rem 0.4rem #202125,
+   -0.3rem -0.3rem 0.4rem #3e3e3e;
+  &__item {
+    background-color: transparent;
+    display: block;
+    color: var(--main--color);
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.4s;
+    &:hover {
+      color: var(--main--color);
+      box-shadow: inset 0.3rem 0.3rem 0.4rem #202125,
+       inset -0.3rem -0.3rem 0.4rem #3e3e3e;
+    }
+  }
+  &__icon {
+    margin-right: 6px;
+  }
+}
+
+button:focus {
+  outline: 0;
+}

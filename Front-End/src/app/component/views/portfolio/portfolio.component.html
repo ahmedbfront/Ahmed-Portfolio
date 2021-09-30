@@ -1,0 +1,40 @@
+<!-- Start Section Portfolio -->
+<section class="section section--padding-top pd-top">
+  <div class="container">
+    <!-- Page Title -->
+    <div class="section__title">
+      <h2 class="section__h2">My 
+        <span class="section__span">portfolio</span>
+      </h2>
+      <p class="section__p">
+        a few recent design and coding projects. want to see more? email me
+      </p>
+    </div>
+    
+    <!-- Start Item  Box -->
+    <div class="project row">
+      <div class="col-lg-4 col-md-6" *ngFor='let project of allProjects'>
+        <div class="project__box position-relative overflow-hidden mb-4 p-3">
+          <div class="project__front">
+            <img class="project__img img-fluid" src="{{ project?.image }}" 
+            alt="image" />
+          </div>
+          <div class="project__back position-absolute">
+            <div class="project__name">
+              <h6 class="">
+                {{ project?.name }}
+              </h6>
+            </div>
+            <div class="project__btn position-absolute">
+              <a class="project__preview" href="{{ project?.preview }}" target="_blank">
+                Preview Live
+                <i class="project__icon align-middle fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Section Portfolio -->

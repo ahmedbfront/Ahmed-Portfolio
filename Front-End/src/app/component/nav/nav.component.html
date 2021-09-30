@@ -1,0 +1,36 @@
+<nav class="sidebar position-fixed" [class.sidebar--opened]='openNav' *ngIf='!isLogin'>
+  <a class='logo position-relative d-block text-center font-weight-bold' routerLink=''></a>
+  <button class='toggle d-lg-none position-absolute border-0' type='button' (click)='openedNav()'>
+    <span class='toggle__icon position-relative d-block m-auto' [class.toggle__icon--opened]='openNav'></span>
+  </button>
+
+  <div class="sidenav">
+    <ul class="sidenav__list align-content-center list-unstyled">
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='' routerLinkActive='sidenav__link--active'
+        [routerLinkActiveOptions]='{exact: true}' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fa fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='about' routerLinkActive='sidenav__link--active' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fas fa-user"></i>
+          About
+        </a>
+      </li>
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='portfolio' routerLinkActive='sidenav__link--active' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fas fa-briefcase"></i>
+          Portfolio
+        </a>
+      </li>
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='contact' routerLinkActive='sidenav__link--active' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fas fa-envelope"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

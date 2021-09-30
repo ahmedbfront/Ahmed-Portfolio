@@ -1,0 +1,49 @@
+.contentt {
+  height: 100vh;
+  &__text {
+    width: 30rem;
+  }
+  &__hello {
+    color: #fffefeb0;
+    font-size: 18px;
+    font-family: var(--font-poppins);
+  }
+  &__h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+  }
+  &__span {
+    color: var(--main--color);
+  }
+  &__p {
+    color: #fffefeb0;
+    font-size: 17px;
+  }
+  &__list {
+    background-color: #343436;
+    padding: 10px;
+  }
+  &__item {
+    letter-spacing: 1px;
+    padding: 4px;
+  }
+  &__line {
+    background: var(--main--color);
+    width: 2px;
+    height: 18px;
+  }
+}
+
+
+
+@media(max-width: 420px) {
+  .contentt {
+    &__h1 {
+      font-size: 2.3rem;
+    }
+    .btns--btn {
+      display: block;
+      margin-right: 0 !important;
+    }
+  }
+}

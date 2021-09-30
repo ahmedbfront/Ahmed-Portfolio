@@ -1,0 +1,5 @@
+<app-nav></app-nav>
+
+<div class="router" [@router]="myOutlet.isActivated? myOutlet.activatedRoute:''">
+  <router-outlet #myOutlet="outlet"></router-outlet>
+</div>

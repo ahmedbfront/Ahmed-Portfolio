@@ -1,0 +1,11 @@
+:root {
+  --main--color: #ff5e00;
+  --bg-color: #2c2d30;
+  --bg-color-hover: #ff5e009e;
+  
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@import "./buttons";
+@import "./global";
+@import "./navbar";

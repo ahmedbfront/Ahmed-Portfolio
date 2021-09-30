@@ -1,0 +1,45 @@
+<div class="section section--padding-top">
+  <div class="container">
+    <div class="section__title">
+      <h2 class="section__h2">
+        Log
+        <span class="section__span">in</span>
+      </h2>
+    </div>
+    
+    <div class="msglogin text-danger">
+      {{msgLogin}}
+    </div>
+    <form class="form" [formGroup]='fGroup' (ngSubmit)='login()'>
+      <div class="form-group position-relative mb-4">
+        <i class="form__icon fas fa-envelope"></i>
+        <input class="form__input form-control pl-5 border-0" type="email" name="email" placeholder="Email" formControlName='email'>
+
+        <div class="form__invlid" *ngIf='f.email.invalid && (f.email.dirty || f.email.touched)'>
+          <div class="text-danger" *ngIf="f.email.errors.required">
+            Email is required.
+          </div>
+          <div class="text-danger" *ngIf="f.email.errors.email && f.email.touched">
+            Your Input Don't match Email format
+          </div>
+        </div>
+      </div>
+      <div class="form-group position-relative mb-4">
+        <i class="form__icon fas fa-key"></i>
+        <input class="form__input form-control pl-5 border-0" type="password" name="password" placeholder="Password" formControlName='password'>
+
+        <div class="form__invlid" *ngIf='f.password.invalid && (f.password.dirty || f.password.touched)'>
+          <div class="text-danger" *ngIf="f.password.errors.required">
+            password is required.
+          </div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btns__item">
+          <i class="btns__icon fas fa-sign-in-alt"></i>
+          Log In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

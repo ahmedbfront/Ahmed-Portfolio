@@ -1,0 +1,135 @@
+ <!-- Start Section About -->
+ <section class="section section--padding-top">
+  <div class="container-fluid container-lg">
+    <!-- Page Title -->
+    <div class="section__title">
+      <h2 class="section__h2">about
+        <span class="section__span">me</span>
+      </h2>
+      <p class="section__p">i design and code beautiful things, and i love what i do</p>
+    </div>
+    <!-- Start Personal Infos -->
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 align-self-center">
+        <div class="image position-relative mb-5">
+          <div class="image__item">
+            <img class="image__img img-fluid position-relative"
+            src="{{ aboutMe?.image }}" alt="Image" />
+          </div>
+        </div>
+      </div>
+      <!-- Start About Content -->
+      <div class="col-md-6 align-self-center">
+        <div class="content">
+          <h4 class="content__h4 font-weight-bold mb-4">
+            I'm a 
+            <span class="content__span">{{ aboutMe?.title | titlecase }}</span>
+          </h4>
+          <ul class="content__list list-unstyled">
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Name 
+              </span>
+              <span class="content__name">
+                {{ aboutMe?.name | titlecase }}
+              </span>
+            </li>
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Birthdate
+              </span>
+              <span class="content__name">
+                4 Jan 1996
+              </span>
+            </li>
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Experience
+              </span>
+              <span class="content__name">
+                {{ aboutMe?.experience }} 
+                Years
+              </span>
+            </li>
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Freelance
+              </span>
+              <span class="content__name">
+                Available
+              </span>
+            </li>
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Address
+              </span>
+              <span class="content__name">
+                {{ aboutMe?.address| titlecase }}
+              </span>
+            </li>
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Email
+              </span>
+              <span class="content__name">
+                {{ aboutMe?.email }}
+              </span>
+            </li>
+            <li class="content__item">
+              <span class="content__title d-inline-block">
+                Phone
+              </span>
+              <span class="content__name">
+                {{ aboutMe?.phone }}
+              </span>
+            </li>
+          </ul>
+
+          <div class="btns mr-4">
+            <a class="btns__item" target="_blank" href="{{ aboutMe?.cv }}">
+              <i class="btns__icon fa fa-download"></i>
+              Download My Cv
+            </a>
+          </div>
+          <div class="btns">
+            <a class="btns__item" routerLink='/contact'>
+              <i class="btns__icon fas fa-envelope"></i>
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- End About Content -->
+    </div>
+    <!-- End Personal Infos -->
+    <hr />
+    
+    <!-- Start Skills -->
+    <div class="skills">
+      <div class="row">
+        <!-- Title Skill -->
+        <h2 class="skills__title col-12">My 
+          <span class="skills__skill--span">Skills</span>
+        </h2>
+        <!-- Start ALl Skills -->
+        <div class="col-lg-4 col-md-6"
+        *ngFor="let about of aboutMe?.skills | keyvalue">
+          <div class="skills__list mb-4">
+            <!-- Start Item Skill -->
+            <div class="skills__text d-flex justify-content-between">
+              <span class="skills__span mb-2 text-capitalize">{{ about?.key }}</span>
+              <span class="skills__span skills--span-aa">
+              {{ about?.value }}</span>
+            </div>
+            <div class="skills__chart position-relative">
+              <span class="skills__progress position-absolute" [style.width.%]="about?.value">
+              </span>
+            </div>
+          </div>
+        </div>
+        <!-- End ALl Skills -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Section About -->

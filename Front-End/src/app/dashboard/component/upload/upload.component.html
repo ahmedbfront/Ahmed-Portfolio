@@ -1,0 +1,43 @@
+<section class="section">
+  <div class="container">
+    <div class="section__title">
+      <h2>
+        Upload a 
+        <span class="section__span">New Project</span>
+      </h2>
+    </div>
+
+    <form class="form" [formGroup]='fGroup' (ngSubmit)='uploadProject()'>
+      <div class="form-group mb-4">
+        <input class="form__input form-control border-0" type="text" name="name" placeholder="Project Name*" formControlName='name'>
+      </div>
+
+      <div class="form-group mb-4">
+        <input class="form__input form-control border-0" type="text" name="skills" placeholder="Skills Used" formControlName='skills'>
+      </div>
+
+      <div class="form-group mb-4">
+        <div class="formimg position-relative">
+          <label class ="formimg__label d-inline-block" for="img">
+            <i class="fas fa-upload mr-1"></i>
+            Project Image*
+          </label>
+          <input class="formimg__input position-absolute" id="img" type="file" name="image"
+          (change)='selectFile($event)'>
+        </div>
+      
+      </div>
+
+      <div class="form-group mb-4">
+        <input class="form__input form-control border-0" type="text" name="preview" placeholder="Project link*" formControlName='preview'>
+      </div>
+
+      <div class="btns">
+        <button class="btns__item" type="submit">
+          <i class="btns__icon fas fa-upload"></i>
+          Upload Project
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

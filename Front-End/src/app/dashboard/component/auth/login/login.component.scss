@@ -1,0 +1,30 @@
+.msglogin {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.form {
+  width: 80%;
+  margin: auto;
+  &__icon {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    opacity: 0.3;
+  }
+  &__input {
+    background-color: var(--bg-color);
+    height: 60px;
+    color: #fffefeeb;
+    box-shadow: inset 0.3rem 0.3rem 0.4rem #202125, inset -0.3rem -0.3rem 0.4rem #3e3e3e;
+    border-radius: 14px;
+    &--text {
+      height: 150px;
+      padding-top: 18px;
+    }
+  }
+  &__invlid {
+    padding: 4px 6px 0;
+  }
+  
+}

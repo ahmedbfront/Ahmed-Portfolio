@@ -1,0 +1,170 @@
+<section class="section section--padding-top active">
+  <div class="container-fluid container-lg">
+    <!-- Page Title -->
+    <div class="section__title">
+      <h2 class="section__h2">get 
+        <span class="section__span">in touch</span>
+      </h2>
+      <p class="section__p">
+        I’m always open to discussing product design work or partnerships.
+      </p>
+    </div>
+
+    <!-- Start Contact Info -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="info">
+          <ul class="info__list list-unstyled">
+            <li class="info__item">
+              <h5 class="info__h5">
+                <span class="info__span d-block mb-2">Email</span>
+                <i class="info__icon far fa-envelope"></i>
+                Ahmedbfront@gmail.com
+              </h5>
+            </li>
+            <li class="info__item">
+              <h5 class="info__h5">
+                <span class="info__span d-block mb-2">Phone</span>
+                <i class="info__icon fab fa-whatsapp"></i>
+                (+2) 0120 574 0051
+              </h5>
+            </li>
+            <li class="info__item">
+              <h5>
+                <span class="info__span d-block mb-2">Follow me</span>
+              </h5>
+              <ul class="social list-unstyled d-flex mt-3">
+                <li class="social__item mr-3">
+                  <a class="social__link d-block text-center" href="https://www.linkedin.com/in/ahmedbfront/" target="_blank">
+                    <i class="social__icon fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+                <li class="social__item mr-3">
+                  <a class="social__link d-block text-center" href="https://twitter.com/AhmedBFront" target="_blank">
+                    <i class="social__icon fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="social__item mr-3">
+                  <a class="social__link d-block text-center" href="https://github.com/ahmedbfront" target="_blank">
+                    <i class="social__icon fab fa-github"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- End Contact Info -->
+
+      <!-- Start Form Contact -->
+      <div class="col-md-8">
+        <form class="form" [formGroup]='fGroup' 
+        (ngSubmit)='sendMsg()'>
+          <div class="row">
+            <!-- Start Form Item -->
+            <div class="col-md-6 form-group mb-4">
+              <i class="form__icon fas fa-user"></i>
+              <input
+                class="form__input form-control pl-5 border-0"
+                required
+                type="text"
+                placeholder="Your Name"
+                formControlName='name' />
+
+              <div class="form__invlid" *ngIf='f.name.invalid && f.name.touched'>
+                <div class="text-danger">
+                  Name is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Form Item -->
+            <div class="col-md-6 form-group mb-4">
+              <i class="form__icon fas fa-envelope"></i>
+              <input
+                class="form__input form-control pl-5 border-0"
+                required
+                type="email"
+                placeholder="Your Email"
+                formControlName='email' />
+
+              <div class="form__invlid" *ngIf='f.email.invalid && 
+              (f.email.dirty || f.email.touched)'>
+                <div class="text-danger" *ngIf="f.email.errors.required">
+                  Email is required.
+                </div>
+                <div class="text-danger" *ngIf="f.email.errors.email && f.email.touched">
+                  Your Input Don't match Email format
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Form Item -->
+            <div class="col-md-12 form-group mb-4">
+              <i class="form__icon fas fa-question"></i>
+              <input
+                class="form__input form-control pl-5 border-0"
+                required
+                type="text"
+                placeholder="Your Subject"
+                formControlName='subject' />
+
+              <div class="form__invlid" *ngIf='f.subject.invalid && 
+                (f.subject.dirty || f.subject.touched)'>
+                <div class="text-danger" *ngIf="f.subject.errors.required">
+                  The subject is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Form Item -->
+            <div class="col-xl-12 form-group mb-3">
+              <i class="form__icon fas fa-comments"></i>
+              <textarea
+                class="form__input form__input--text form-control pl-5 border-0 "
+                required
+                placeholder="Your Message"
+                formControlName='message'></textarea>
+
+              <div class="form__invlid" *ngIf='f.message.invalid && 
+                (f.message.dirty || f.message.touched)'>
+                <div class="text-danger" *ngIf="f.message.errors.required">
+                  The message is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Start Form Item -->
+            <div class="btns ml-3">
+              <button class="btns__item" type="submit" >
+                <i class="btns__icon fas fa-paper-plane"></i>
+                Send Your Message
+              </button>
+            </div>
+          </div>
+        </form>
+        
+      </div>
+      <!-- End Form Contact -->
+    </div>
+
+    <div class="success success--bgs position-fixed text-white" 
+      *ngIf='successfulMsg'>
+      <h5 class="success__msg">
+        <i class="success__icon fas fa-check-circle"></i>
+        {{ sentSuccessfully }}
+      </h5>
+    </div>
+
+    <div class="success success--bge position-fixed text-white" *ngIf='successfulErr'>
+      <h5 class="success__msg">
+        <i class="success__icon fas fa-exclamation-triangle"></i>
+        {{ sendErr }}
+      </h5>
+    </div>
+
+    <footer class="text-center">
+      <p>copyright © 2020 all rights reserved</p>
+    </footer>
+  </div>
+</section>

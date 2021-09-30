@@ -1,0 +1,94 @@
+.image {
+  margin-right: 100px;
+  &::before {
+    content: '';
+    background: var(--main--color);
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    width: 90%;
+    height: 90%;
+    z-index: 2;
+  }
+  &__item {
+    &::before,
+    &::after {
+      content: '';
+      background-image: url('../../../../assets/img/dots.png');
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      opacity: .2;
+      z-index: 1;
+    }
+    &::before {
+      right: -70px;
+      bottom: -68px;
+    }
+    &::after {
+      top: -35px;
+      left: -35px;
+    }
+  }
+  &__img {
+    margin-left: 40px;
+    z-index: 3;
+  }
+}
+
+.content {
+  &__h4 {
+    font-size: 30px;
+  }
+  &__span {
+    color: var(--main--color);
+  }
+  &__item {
+    margin-bottom: 12px;
+  }
+  &__title {
+    width: 130px;
+    color: #979797;
+    font-family: var(--font-poppins);
+  }
+  &__name {
+    color: #fffefeb0;
+    font-family: var(--font-poppins);
+  }
+}
+
+hr {
+  background-color: #575757;
+  margin: 5rem 0 3rem;
+}
+
+.skills {
+  &__title {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+  
+  &__chart {
+    background-color: #ff5e0029;
+    height: 8px;
+    border-radius: 6px;
+  }
+  &__progress {
+    background-color: var(--main--color);
+    width: 0;
+    height: 8px;
+    border-radius: 6px;
+  }
+  &__skill--span {
+    color: var(--main--color);
+  }
+}
+
+@media(max-width: 767.98px) {
+  .image {
+    margin-left: 50px;
+    margin-right: 90px;
+    margin-bottom: 100px !important;
+  }
+}

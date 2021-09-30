@@ -1,0 +1,41 @@
+<nav class="sidebar" [class.sidebar--opened]='openNav' *ngIf='isLogin'>
+  <a class='logo' routerLink=''></a>
+  <button class='toggle d-lg-none' type='button' (click)='openedNav()'>
+    <span class='toggle__icon' [class.toggle__icon--opened]='openNav'></span>
+  </button>
+
+  <div class="sidenav">
+    <ul class="list-unstyled sidenav__list">
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='/dash' routerLinkActive='sidenav__link--active'
+        [routerLinkActiveOptions]='{exact: true}' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fa fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='upload' routerLinkActive='sidenav__link--active' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fas fa-cloud-upload-alt"></i>
+          Upload
+        </a>
+      </li>
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='message' routerLinkActive='sidenav__link--active' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fas fa-envelope"></i>
+          Message
+        </a>
+      </li>
+      <li class='sidenav__item'>
+        <a class='sidenav__link d-block text-center' routerLink='update' routerLinkActive='sidenav__link--active' (click)='closeNav()'>
+          <i class="sidenav__icon d-block mb-1 fas fa-edit"></i>
+          Update
+        </a>
+      </li>
+      <a class='signup mt-4' (click)='signUp()'>
+        Log Out
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </ul>
+    
+  </div>
+</nav>
